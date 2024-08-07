@@ -1,0 +1,15 @@
+@if(game | async; as g) {
+  <div class="score">Score
+    <span>Game: {{ g.game }}</span>
+    <span>Set: {{ g.set }}</span>
+    <span>Match: {{ g.match }}</span>
+    <span>Tiebreaker: {{ g.tiebreaker }}</span>
+  </div>
+} @else {
+  <div>Loading...</div>
+}
+@if(error) {
+  <div style="color:red">{{ error }}</div>
+}
+<button (click)="score(1)">Speler 1</button>
+<button (click)="score(2)">Speler 2</button>
